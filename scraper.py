@@ -12,5 +12,5 @@ for i in all_box_scores:
     full_link = 'http://www.pro-football-reference.com/boxscores/%s.htm'%(i)
     game_data = urllib.urlopen(full_link)
     words_2 = game_data.read().decode('utf-8')
-    all_punts = re.findall('<td align="left"  csk="0">(.+)</td>', words_2)
+    all_punts = re.findall('<td align="left"  csk="0">(.+)</td>', words_2) #currently finds yard-line for each play, must expand
     print all_punts
